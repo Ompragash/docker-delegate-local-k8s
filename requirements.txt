@@ -1,0 +1,5 @@
+###### Repo Requirements without Version Specifiers ######
+ansible-core
+docker
+docker-compose
+

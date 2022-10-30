@@ -1,0 +1,20 @@
+---
+- name: Create Delegate Token and Download & Deploy Docker Delegate
+  hosts: server
+  gather_facts: false
+
+  tasks:
+    - name: Include config.yml vars file
+      ansible.builtin.include_vars:
+        file: vars/config.yml
+
+    - name: Include create_delegate_token.yml tasks file
+      ansible.builtin.include_tasks: tasks/create_delegate_token.yml
+      tags:
+        - delegate-token
+
+    - name: Include download_docker_delegate.yml tasks file
+      ansible.builtin.include_tasks: tasks/download_docker_delegate.yml
+
+    - name: Include deploy_docker_delegate tasks file
+      ansible.builtin.include_tasks: tasks/deploy_docker_delegate.yml

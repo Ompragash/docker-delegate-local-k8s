@@ -1,0 +1,4 @@
+---
+- name: Deployment Delegate from compose file
+  community.docker.docker_compose:
+    project_src: ./docker
